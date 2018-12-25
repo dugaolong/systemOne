@@ -1,0 +1,73 @@
+package cn.dgl.www.systemone;
+
+/**
+ * this file is showing code for adb shell ..
+ *
+ * Created by dugaolong on 18/12/25.
+ */
+
+public class Properties {
+    /**
+     adb push /Users/dugaolong/Downloads/systemOne/app/build/outputs/apk/app-debug.apk  /sdcard
+
+     adb shell input keyevent 3
+
+     常用的linux文件权限：
+     444 r--r--r--
+     600 rw-------
+     644 rw-r--r--
+     666 rw-rw-rw-
+     700 rwx------
+     744 rwxr--r--
+     755 rwxr-xr-x
+     777 rwxrwxrwx
+     修改权限：adb shell chmod 644 /system/a.txt
+
+
+     将app放在system/app下面：
+     https://blog.csdn.net/hexingen/article/details/76736708
+
+     通过adb shell命令查看当前与用户交互的activity
+     adb shell dumpsys activity activities | sed -En -e '/Running activities/,/Run #0/p’
+
+     查看进程信息：adb shell ps 或者 adb shell ps | grep 包名
+
+     将自己的app改变为系统app：
+     1、使用ADB命令将app安装在system/app目录下
+     2、首先加入android:sharedUserId=”android.uid.system”这个属性。通过Shared User id,拥有同一个User id的多个APK可以配置成运行在同一个进程中。那么把程序的UID配成android.uid.system，也就是要让程序运行在系统进程中，也就是系统应用。
+
+     Android 用 platform.pk8 和 platform.x509.pem 生成 keystore 系统签名文件:
+     第二种方法是把系统的 platform.pk8 和 platform.x509.pem 转换成为我们可以直接使用的 keystore 文件，在编译时自动签名。
+     相对而言，第二种方法更为方便，可以全自动化对应用进行签名，方便开发人员测试。
+     这里介绍下第二种方式的实现方法。
+     首先，需要使用到 keytool-importkeypair 这个工具
+     可以在 https://github.com/getfatday/keytool-importkeypair 下载
+     然后，运行如下命令，就可以利用  platform.pk8 和 platform.x509.pem 生成 keystore 文件
+     ./keytool-importkeypair -k ./release.keystore -p youPassword -pk8 platform.pk8 -cert platform.x509.pem -alias youAlias
+
+     其中
+
+     -k 表示要生成的 keystore 文件的名字，这里命名为 release.keystore
+     -p 表示要生成的 keystore 的密码，这里是 youPassword
+     -pk8 表示要导入的 platform.pk8 文件
+     -cert 表示要导入的platform.x509.pem
+     -alias 表示给生成的 release.keystore 取一个别名，这是命名为 youAlias
+
+
+     将systemOne放进system/app的步骤：
+     adb push /Users/dugaolong/Downloads/systemOne/app/build/outputs/apk/systemOne_Release.apk /sdcard/
+     adb shell
+     su
+     mount -o remount,rw /system
+     mount -o remount,rw -t yaffs2 /dev/block/mtdblock3 /system
+     cat /sdcard/systemOne_Release.apk > /system/app/systemOne_Release.apk
+     cd system/app
+     chmod 755 systemOne_Release.apk
+     exit
+     adb reboot
+
+
+
+
+     **/
+}
