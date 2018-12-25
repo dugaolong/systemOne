@@ -1,14 +1,7 @@
-package cn.dgl.www.systemone;
 
-/**
- * this file is showing code for adb shell ..
- *
- * Created by dugaolong on 18/12/25.
- */
 
-public class Properties {
-    /**
-     adb push /Users/dugaolong/Downloads/systemOne/app/build/outputs/apk/app-debug.apk  /sdcard
+
+    adb push /Users/dugaolong/Downloads/systemOne/app/build/outputs/apk/app-debug.apk  /sdcard
 
      adb shell input keyevent 3
 
@@ -66,8 +59,3 @@ public class Properties {
      exit
      adb reboot
 
-
-
-
-     **/
-}
