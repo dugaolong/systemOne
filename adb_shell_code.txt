@@ -47,15 +47,16 @@
      -alias 表示给生成的 release.keystore 取一个别名，这是命名为 youAlias
 
 
-     将systemOne放进system/app的步骤：
-     adb push /Users/dugaolong/Downloads/systemOne/app/build/outputs/apk/systemOne_Release.apk /sdcard/
-     adb shell
-     su
-     mount -o remount,rw /system
-     mount -o remount,rw -t yaffs2 /dev/block/mtdblock3 /system
-     cat /sdcard/systemOne_Release.apk > /system/app/systemOne_Release.apk
-     cd system/app
-     chmod 755 systemOne_Release.apk
-     exit
-     adb reboot
+    将systemOne放进system/app的步骤：
+    adb push /Users/dugaolong/github/systemOne/app/build/outputs/apk/systemOne_Release.apk /sdcard/
+    adb shell
+    su
+    mount -o remount,rw /system
+    mount -o remount,rw -t yaffs2 /dev/block/mtdblock3 /system
+    cat /sdcard/systemOne_Release.apk > /system/app/systemOne_Release.apk
+    cd system/app
+    ls -al
+    chmod 755 systemOne_Release.apk
+    exit
+    adb reboot
 
