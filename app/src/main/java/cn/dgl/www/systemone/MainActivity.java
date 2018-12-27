@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // //东方头条
+
     private void dongfangtoutiao() throws Exception {
         Thread.sleep(3000);
         execShellCmd("am start -n com.songheng.eastnews/com.songheng.eastfirst.business.ad.view.WarmSplashActivity");
