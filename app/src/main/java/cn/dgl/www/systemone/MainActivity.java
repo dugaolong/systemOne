@@ -36,100 +36,90 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 num = Integer.valueOf(input_num.getText().toString());
                 try {
-                    Thread.sleep(3000);
-                    execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
-                    Thread.sleep(8000);
-                    for (int i = 0; i < num; i++) {
-                        Log.v("qutoutiao", "第" + i + "次start");
-                        execShellCmd("input tap 78 1233");
-                        Thread.sleep(5000);
-                        execShellCmd("input tap 180 600");
-                        Thread.sleep(5000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 20");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 19");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 19");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 19");
-                        Thread.sleep(2000);
-                        execShellCmd("input keyevent 19");
-//                        execShellCmd("input swipe 222 1000 555 300 900");
-//                        Thread.sleep(5000);
-//                        execShellCmd("input swipe 222 1000 444 300 700");
-//                        Thread.sleep(5000);
-//                        execShellCmd("input swipe 222 1000 666 300 800");
-//                        Thread.sleep(5000);
-//                        execShellCmd("input swipe 222 1000 567 300 800");
-//                        Thread.sleep(5000);
-//                        execShellCmd("input swipe 222 1000 636 300 900");
-//                        Thread.sleep(5000);
-//                        execShellCmd("input swipe 222 1000 578 300 600");
-//                        Thread.sleep(5000);
-//                        execShellCmd("input swipe 222 300 565 1000 800");
-//                        Thread.sleep(5000);
-//                        execShellCmd("input swipe 222 300 502 1000 800");
-                        Thread.sleep(5000);
-                        execShellCmd("input keyevent 4");
-                        Thread.sleep(5000);
-                        Log.v("qutoutiao", "第" + i + "次end");
-                    }
+                    qutoutiao();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
             }
         });
+    }
+
+    private void qutoutiao() throws InterruptedException {
+        //趣头条
+        Thread.sleep(3000);
+        execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
+        Thread.sleep(8000);
+        for (int i = 0; i < num; i++) {
+            Log.v("qutoutiao", "第" + i + "次start");
+            execShellCmd("input tap 78 1233");
+            Thread.sleep(5000);
+            execShellCmd("input tap 180 600");
+            Thread.sleep(5000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 20");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 19");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 19");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 19");
+            Thread.sleep(2000);
+            execShellCmd("input keyevent 19");
+            Thread.sleep(5000);
+            execShellCmd("input keyevent 4");
+            Thread.sleep(5000);
+            Log.v("qutoutiao", "第" + i + "次end");
+        }
     }
 
     /**
