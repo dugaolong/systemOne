@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.v("qutoutiao", "第" + i + "次start");
                         execShellCmd("input tap 100 1673");
                         Thread.sleep(5000);
-                        execShellCmd("input tap 270 800");
+                        execShellCmd("input tap 270 1121");
                         Thread.sleep(5000);
                         execShellCmd("input keyevent 20");
                         Thread.sleep(2000);
