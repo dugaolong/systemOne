@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         Thread.sleep(8000);
         for (int i = 1; i < num; i++) {
             Log.v("qutoutiao", "第" + i + "次start");
-            if (i % 2 == 0) {
+            if (i % 50 == 0) {
                 execShellCmd("am force-stop com.jifen.qukan");
                 Thread.sleep(3000);
                 execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
@@ -104,6 +104,12 @@ public class MainActivity extends AppCompatActivity {
         Thread.sleep(8000);
         for (int i = 0; i < num; i++) {
             Log.v("dongfangtoutiao", "第" + i + "次start");
+            if (i % 50 == 0) {
+                execShellCmd("am force-stop com.songheng.eastnews");
+                Thread.sleep(3000);
+                execShellCmd("am start -n com.songheng.eastnews/com.songheng.eastfirst.common.view.activity.MainActivity");
+                Thread.sleep(12000);
+            }
             execShellCmd("input tap 100 1673");
             Thread.sleep(5000);
             execShellCmd("input tap 270 821");
