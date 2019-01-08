@@ -27,16 +27,16 @@ public class MainActivity extends AppCompatActivity {
 
     MyStatusReceiver mMyStatusReceiver;
     int num = 1;
-    Context mContext;
     EditText input_num;
+    Context mContext;
     List<ApplicationInfo> mApplicationInfos;
     Set<String> allowPackages;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         queryFilterAppInfo();//获取所有的app信息
         mContext = this;
         input_num = (EditText) findViewById(R.id.input_num);
@@ -60,15 +60,18 @@ public class MainActivity extends AppCompatActivity {
                     if (allowPackages.contains("com.jifen.qukan")) {
                         qutoutiao();
                     }
-                    if (allowPackages.contains("com.songheng.eastnews")) {
-                        dongfangtoutiao();
+                    if (allowPackages.contains("com.huolea.bull")) {
+                        niuniutoutiao();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
             }
         });
     }
+
+
 
     private void qutoutiao() throws Exception {
         //趣头条
@@ -77,46 +80,45 @@ public class MainActivity extends AppCompatActivity {
         Thread.sleep(8000);
         for (int i = 1; i < num; i++) {
             Log.v("qutoutiao", "第" + i + "次start");
-            if (i % 50 == 0) {
+            if (i % 30 == 0) {
                 execShellCmd("am force-stop com.jifen.qukan");
                 Thread.sleep(3000);
                 execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
                 Thread.sleep(12000);
             }
-            execShellCmd("input tap 78 1233");
+            execShellCmd("input tap 100 1055");
             Thread.sleep(5000);
-            execShellCmd("input tap 78 1233");
+            execShellCmd("input tap 100 1055");
             Thread.sleep(5000);
-            execShellCmd("input tap 180 600");
+            execShellCmd("input tap 270 694");
             upDownClick();
-
             Log.v("qutoutiao", "第" + i + "次end");
         }
         execShellCmd("am force-stop com.jifen.qukan");
     }
 
-    // //东方头条
-    private void dongfangtoutiao() throws Exception {
+    // //牛牛头条
+    private void niuniutoutiao() throws Exception {
         Thread.sleep(3000);
-        execShellCmd("am start -n com.songheng.eastnews/com.songheng.eastfirst.common.view.activity.MainActivity");
+        execShellCmd("am start -n com.huolea.bull/com.huolea.bull.page.other.activity.MainActivity");
         Thread.sleep(8000);
-        for (int i = 0; i < num; i++) {
-            Log.v("dongfangtoutiao", "第" + i + "次start");
-            if (i % 50 == 0) {
-                execShellCmd("am force-stop com.jifen.qukan");
+        for (int i = 1; i < num; i++) {
+            Log.v("niuniutoutiao", "第" + i + "次start");
+            if (i % 30 == 0) {
+                execShellCmd("am force-stop com.huolea.bull");
                 Thread.sleep(3000);
-                execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
+                execShellCmd("am start -n com.huolea.bull/com.huolea.bull.page.other.activity.MainActivity");
                 Thread.sleep(12000);
             }
-            execShellCmd("input tap 78 1233");
+            execShellCmd("input tap 100 1055");
             Thread.sleep(5000);
-            execShellCmd("input tap 78 1233");
+            execShellCmd("input tap 100 1055");
             Thread.sleep(5000);
-            execShellCmd("input tap 180 600");
+            execShellCmd("input tap 270 694");
             upDownClick();
-            Log.v("dongfangtoutiao", "第" + i + "次end");
+            Log.v("niuniutoutiao", "第" + i + "次end");
         }
-        execShellCmd("am force-stop com.songheng.eastnews");
+        execShellCmd("am force-stop com.huolea.bull");
     }
 
     private void upDownClick() throws Exception {
@@ -221,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     private void queryFilterAppInfo() {
         PackageManager pm = this.getPackageManager();
         // 查询所有已经安装的应用程序
@@ -253,6 +256,5 @@ public class MainActivity extends AppCompatActivity {
         }
         mApplicationInfos = applicationInfos;
     }
-
 
 }
