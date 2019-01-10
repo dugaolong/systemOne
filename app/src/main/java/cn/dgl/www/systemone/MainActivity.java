@@ -73,21 +73,22 @@ public class MainActivity extends AppCompatActivity {
         //趣头条
         Thread.sleep(3000);
         execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
-        Thread.sleep(8000);
+        Thread.sleep(10000);
         for (int i = 1; i < num; i++) {
             Log.v("qutoutiao", "第" + i + "次start");
-            if (i % 50 == 0) {
-                execShellCmd("am force-stop com.jifen.qukan");
-                Thread.sleep(3000);
-                execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
-                Thread.sleep(12000);
-            }
-            execShellCmd("input tap 78 1233");
+//            if (i % 50 == 0) {
+//                execShellCmd("am force-stop com.jifen.qukan");
+//                Thread.sleep(3000);
+//                execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
+//                Thread.sleep(12000);
+//            }
+            execShellCmd("input tap 187 187");
             Thread.sleep(5000);
-            execShellCmd("input tap 78 1233");
+            execShellCmd("input tap 187 187");
             Thread.sleep(5000);
             execShellCmd("input tap 180 300");
-            upDownClick();
+//            upDownClick();
+            swipeClick();
             Log.v("qutoutiao", "第" + i + "次end");
         }
         execShellCmd("am force-stop com.jifen.qukan");
@@ -97,21 +98,21 @@ public class MainActivity extends AppCompatActivity {
     private void niuniutoutiao() throws Exception {
         Thread.sleep(3000);
         execShellCmd("am start -n com.huolea.bull/com.huolea.bull.page.other.activity.MainActivity");
-        Thread.sleep(8000);
+        Thread.sleep(10000);
         for (int i = 1; i < num; i++) {
             Log.v("niuniutoutiao", "第" + i + "次start");
-            if (i % 30 == 0) {
-                execShellCmd("am force-stop com.huolea.bull");
-                Thread.sleep(3000);
-                execShellCmd("am start -n com.huolea.bull/com.huolea.bull.page.other.activity.MainActivity");
-                Thread.sleep(12000);
-            }
-            execShellCmd("input tap 100 1055");
+//            if (i % 30 == 0) {
+//                execShellCmd("am force-stop com.huolea.bull");
+//                Thread.sleep(3000);
+//                execShellCmd("am start -n com.huolea.bull/com.huolea.bull.page.other.activity.MainActivity");
+//                Thread.sleep(12000);
+//            }
+            execShellCmd("input tap 100 1233");
             Thread.sleep(5000);
-            execShellCmd("input tap 100 1055");
+            execShellCmd("input tap 100 1233");
             Thread.sleep(5000);
             execShellCmd("input tap 270 694");
-            upDownClick();
+            swipeClick();
             Log.v("niuniutoutiao", "第" + i + "次end");
         }
         execShellCmd("am force-stop com.huolea.bull");
@@ -178,6 +179,38 @@ public class MainActivity extends AppCompatActivity {
         execShellCmd("input keyevent 19");
         Thread.sleep(2000);
         execShellCmd("input keyevent 19");
+        Thread.sleep(5000);
+        execShellCmd("input keyevent 4");
+        Thread.sleep(5000);
+        execShellCmd("input keyevent 4");
+        Thread.sleep(5000);
+    }
+// execShellCmd("input swipe 222 1000 555 300 900");
+    private void swipeClick() throws Exception {
+        Thread.sleep(5000);
+        execShellCmd("input swipe 222 1000 555 300 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1020 555 300 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1000 555 310 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1007 555 300 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1000 555 302 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1000 555 305 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1000 555 304 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1007 555 304 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 555 304 222 1008 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 555 304 222 1008 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 555 304 222 1008 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 555 304 222 1008 1500");
         Thread.sleep(5000);
         execShellCmd("input keyevent 4");
         Thread.sleep(5000);
