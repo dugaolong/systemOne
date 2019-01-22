@@ -26,8 +26,8 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity {
 
     MyStatusReceiver mMyStatusReceiver;
-    int num,num2;
-    EditText input_num1,input_num2;
+    int num;
+    EditText input_num1;
     Context mContext;
     List<ApplicationInfo> mApplicationInfos;
     Set<String> allowPackages;
@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         queryFilterAppInfo();//获取所有的app信息
         mContext = this;
         input_num1 = (EditText) findViewById(R.id.input_num1);
-        input_num2 = (EditText) findViewById(R.id.input_num2);
         Button button1 = (Button) findViewById(R.id.button1);
 
         // 注册广播，添加三个Action
@@ -54,18 +53,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(mContext, "1填数字", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (TextUtils.isEmpty(input_num2.getText().toString())) {
-                    Toast.makeText(mContext, "2填数字", Toast.LENGTH_SHORT).show();
-                    return;
-                }
                 num = Integer.valueOf(input_num1.getText().toString());
-                num2 = Integer.valueOf(input_num2.getText().toString());
                 try {
-
-                    if (allowPackages.contains("com.jifen.qukan")&&num>0) {
-                        qutoutiao();
-                    }
-                    if (allowPackages.contains("com.huolea.bull")&&num2>0) {
+                    if (allowPackages.contains("com.huolea.bull")&&num>0) {
                         niuniutoutiao();
                     }
                 } catch (Exception e) {
@@ -75,41 +65,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void qutoutiao() throws Exception {
-        //趣头条
-        Thread.sleep(3000);
-        execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
-        Thread.sleep(10000);
-        for (int i = 1; i < num; i++) {
-//            Log.v("qutoutiao", "第" + i + "次start");
-//            if (i % 50 == 0) {
-//                execShellCmd("am force-stop com.jifen.qukan");
-//                Thread.sleep(3000);
-//                execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
-//                Thread.sleep(12000);
-//            }
-            execShellCmd("input tap 187 187");
-            Thread.sleep(5000);
-            execShellCmd("input tap 187 187");
-            Thread.sleep(5000);
-            execShellCmd("input tap 180 300");
-//            upDownClick();
-            swipeClick();
-//            Log.v("qutoutiao", "第" + i + "次end");
-            if (i % 10 == 0) {
-                Toast.makeText(mContext, i+"jifen", Toast.LENGTH_SHORT).show();
-            }
-
-        }
-        execShellCmd("am force-stop com.jifen.qukan");
-    }
 
     // //牛牛头条
     private void niuniutoutiao() throws Exception {
         Thread.sleep(3000);
         execShellCmd("am start -n com.huolea.bull/com.huolea.bull.page.other.activity.MainActivity");
         Thread.sleep(10000);
-        for (int i = 1; i < num2; i++) {
+        for (int i = 1; i < num; i++) {
 //            Log.v("niuniutoutiao", "第" + i + "次start");
 //            if (i % 30 == 0) {
 //                execShellCmd("am force-stop com.huolea.bull");

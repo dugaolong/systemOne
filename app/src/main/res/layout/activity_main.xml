@@ -18,18 +18,11 @@
         android:id="@+id/input_num1"
         android:inputType="number"
         android:hint="请输入循环次数"
-        android:text="60"
+        android:text="300"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/input_num2"
-        android:inputType="number"
-        android:hint="请输入循环次数"
-        android:text="60"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 </LinearLayout>
 
     <Button
