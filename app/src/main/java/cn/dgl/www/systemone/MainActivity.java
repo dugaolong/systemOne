@@ -62,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
                 num2 = Integer.valueOf(input_num2.getText().toString());
                 try {
 
-                    if (allowPackages.contains("com.jifen.qukan")&&num>0) {
+                    if (allowPackages.contains("com.jifen.qukan") && num > 0) {
                         qutoutiao();
                     }
-                    if (allowPackages.contains("com.huolea.bull")&&num2>0) {
+                    if (allowPackages.contains("com.huolea.bull") && num2 > 0) {
                         niuniutoutiao();
                     }
                 } catch (Exception e) {
@@ -96,9 +96,9 @@ public class MainActivity extends AppCompatActivity {
 //            upDownClick();
             swipeClick();
 //            Log.v("qutoutiao", "第" + i + "次end");
-            if (i % 10 == 0) {
-                Toast.makeText(mContext, i+"jifen", Toast.LENGTH_SHORT).show();
-            }
+//            if (i % 10 == 0) {
+//                Toast.makeText(mContext, i+"jifen", Toast.LENGTH_SHORT).show();
+//            }
 
         }
         execShellCmd("am force-stop com.jifen.qukan");
@@ -117,16 +117,18 @@ public class MainActivity extends AppCompatActivity {
 //                execShellCmd("am start -n com.huolea.bull/com.huolea.bull.page.other.activity.MainActivity");
 //                Thread.sleep(12000);
 //            }
-            execShellCmd("input tap 100 1233");
+            execShellCmd("input tap 187 187");
             Thread.sleep(5000);
             execShellCmd("input tap 100 1233");
             Thread.sleep(5000);
-            execShellCmd("input tap 270 694");
+            execShellCmd("input tap 100 1233");
+            Thread.sleep(5000);
+            execShellCmd("input tap 180 300");
             swipeClick();
 //            Log.v("niuniutoutiao", "第" + i + "次end");
-            if (i % 10 == 0) {
-                Toast.makeText(mContext, i+"huolea", Toast.LENGTH_SHORT).show();
-            }
+//            if (i % 10 == 0) {
+//                Toast.makeText(mContext, i+"huolea", Toast.LENGTH_SHORT).show();
+//            }
         }
         execShellCmd("am force-stop com.huolea.bull");
     }
