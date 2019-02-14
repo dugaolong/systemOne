@@ -60,3 +60,5 @@
     exit
     adb reboot
 
+
+    rm -r xxx

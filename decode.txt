@@ -1,0 +1,25 @@
+1、使用drizzleDumper脱壳360
+安装目标apk
+--
+ cd /Users/dugaolong/Downloads/Android反编译工具/drizzleDumper-master/libs/x86
+--
+adb push drizzleDumper /data/local/tmp
+--
+adb shell chmod 0777 /data/local/tmp/drizzleDumper
+--
+adb shell
+--
+su
+--
+cd /data/local/tmp
+--
+
+
+
+2、直接使用Jadx打开app
+
+--cd进入jadx文件夹
+cd /Users/dugaolong/Downloads/Android反编译工具/jadx-0.9.0/lib
+--
+java -jar jadx-gui-0.9.0.jar
+
