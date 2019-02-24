@@ -107,30 +107,17 @@ public class MainActivity extends AppCompatActivity {
     // //牛牛头条
     private void niuniutoutiao() throws Exception {
         Thread.sleep(3000);
-        execShellCmd("am start -n com.huolea.bull/com.huolea.bull.page.other.activity.MainActivity");
+        execShellCmd("am start -n com.ly.taotoutiao/com.ly.taotoutiao.view.activity.MainActivity");
         Thread.sleep(10000);
-        for (int i = 1; i < num2; i++) {
-//            Log.v("niuniutoutiao", "第" + i + "次start");
-//            if (i % 30 == 0) {
-//                execShellCmd("am force-stop com.huolea.bull");
-//                Thread.sleep(3000);
-//                execShellCmd("am start -n com.huolea.bull/com.huolea.bull.page.other.activity.MainActivity");
-//                Thread.sleep(12000);
-//            }
-            execShellCmd("input tap 187 187");
+        for (int i = 1; i < num; i++) {
+            execShellCmd("input tap 277 187");
             Thread.sleep(5000);
-            execShellCmd("input tap 100 1233");
-            Thread.sleep(5000);
-            execShellCmd("input tap 100 1233");
+            execShellCmd("input swipe 222 1020 555 300 1500");
             Thread.sleep(5000);
             execShellCmd("input tap 180 300");
             swipeClick();
-//            Log.v("niuniutoutiao", "第" + i + "次end");
-//            if (i % 10 == 0) {
-//                Toast.makeText(mContext, i+"huolea", Toast.LENGTH_SHORT).show();
-//            }
         }
-        execShellCmd("am force-stop com.huolea.bull");
+        execShellCmd("am force-stop com.ly.taotoutiao");
     }
 
 // execShellCmd("input swipe 222 1000 555 300 900");
