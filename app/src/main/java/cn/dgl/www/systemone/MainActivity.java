@@ -61,12 +61,11 @@ public class MainActivity extends AppCompatActivity {
                 num = Integer.valueOf(input_num1.getText().toString());
                 num2 = Integer.valueOf(input_num2.getText().toString());
                 try {
-
-                    if (allowPackages.contains("com.jifen.qukan") && num > 0) {
-                        qutoutiao();
-                    }
                     if (allowPackages.contains("com.ly.taotoutiao") && num2 > 0) {
                         niuniutoutiao();
+                    }
+                    if (allowPackages.contains("com.jifen.qukan") && num > 0) {
+                        qutoutiao();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
