@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     if (allowPackages.contains("com.jifen.qukan") && num > 0) {
                         qutoutiao();
                     }
-                    if (allowPackages.contains("com.huolea.bull") && num2 > 0) {
+                    if (allowPackages.contains("com.ly.taotoutiao") && num2 > 0) {
                         niuniutoutiao();
                     }
                 } catch (Exception e) {
@@ -109,10 +109,10 @@ public class MainActivity extends AppCompatActivity {
         Thread.sleep(3000);
         execShellCmd("am start -n com.ly.taotoutiao/com.ly.taotoutiao.view.activity.MainActivity");
         Thread.sleep(10000);
-        for (int i = 1; i < num; i++) {
+        for (int i = 1; i < num2; i++) {
             execShellCmd("input tap 277 187");
             Thread.sleep(5000);
-            execShellCmd("input swipe 222 1020 555 300 1500");
+            execShellCmd("input swipe 555 304 222 1008 1500");
             Thread.sleep(5000);
             execShellCmd("input tap 180 300");
             swipeClick();
