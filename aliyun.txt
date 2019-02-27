@@ -1,0 +1,40 @@
+1、阿里云服务器公网地址为什么ping不通
+登录 云服务器 ECS 管理控制台。
+在左侧导航栏中，选择 网络和安全 > 安全组。
+选择目标地域。
+找到要配置授权规则的安全组，在 操作 列中，单击 配置规则。
+在 安全组规则 页面上，单击 添加安全组规则。
+设置好安全组一般就好了。
+
+2、链接
+ssh root@47.94.152.182
+
+3、搭建lmnp环境
+https://help.aliyun.com/document_detail/97251.html?spm=5176.11065259.1996646101.searchclickresult.f15d71230YUW1o
+
+4、linux按照文件名查找
+(1)find / -name httpd.conf　　#在根目录下查找文件httpd.conf，表示在整个硬盘查找
+
+5/linux下卸载5.3版本php
+rpm -qa|grep php
+列出所有的php相关的rpm包
+rpm -e xxx  删除包
+mv /etc/php.ini.rpmsave  /etc/php.ini  恢复php.ini文件
+cp /usr/local/php/bin/php  /usr/bin/ 复制命令文件
+
+
+6安装顺序
+安装lnmp
+lnmp环境中如何安装yaf
+安装放网站代码？目录
+安装vhost 域名链接目录
+
+
+7、发文件夹文件到linux
+scp -r /Users/dugaolong/otherProject/ka/zfaka-master root@47.94.152.182:/home/wwwroot
+
+8、修改文件名
+sudo mv test.txt new.txt
+
+
+
