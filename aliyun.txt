@@ -32,6 +32,8 @@ lnmp环境中如何安装yaf
 
 7、发文件夹文件到linux
 scp -r /Users/dugaolong/otherProject/ka/zfaka-master root@47.94.152.182:/home/wwwroot
+拉取文件
+scp root@47.94.152.182:/root/lnmp1.5/tools/remove_open_basedir_restriction.sh /Users/dugaolong/otherProject/ka
 
 8、修改文件名
 sudo mv test.txt new.txt
