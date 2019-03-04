@@ -31,12 +31,32 @@ lnmp环境中如何安装yaf
 
 
 7、发文件夹文件到linux
-scp -r /Users/dugaolong/otherProject/ka/zfaka-master root@47.94.152.182:/home/wwwroot
+scp -r /Users/dugaolong/otherProject/ka/www.yikafaka.com root@47.94.152.182:/home/wwwroot/www.yikafaka.com
 拉取文件
 scp root@47.94.152.182:/root/lnmp1.5/tools/remove_open_basedir_restriction.sh /Users/dugaolong/otherProject/ka
 
 8、修改文件名
 sudo mv test.txt new.txt
 
+9、删除文件   rm -f file
+删除文件夹 rm -r dirname
+
+10、文件所有者
+ls ‐ahl
+r = 4 (2 ^ 2)
+w = 2 (2 ^ 1)
+x = 1 (2 ^ 0)
+
+11、相对安全的权限：
+1、站点内所有目录和文件的用户和组都应该是root
+2、所有目录权限默认的755
+3、所有文件权限默认的644 （不能改文件）
 
 
+地址：
+https://github.com/zlkbdotnet/zfaka
+http://www.izcv.com/1970.html
+
+Bt-Panel: http://47.94.152.182:8888/c9ca9714
+username: x1lsuajb
+password: f6ab7fa4
