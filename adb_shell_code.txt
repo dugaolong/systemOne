@@ -1,4 +1,9 @@
 
+ adb截图：
+（1）adb shell screencap -p /sdcard/screen.png
+（2）adb pull /sdcard/screen.png
+（1）是截图保存到sd卡；
+（2）是将screen.png保存到计算机上；保存的路径为你使用adb命令时的当前目录，当然你也可以在最后加入你想存放的路径名。
 
 
     adb push /Users/dugaolong/Downloads/systemOne/app/build/outputs/apk/app-debug.apk  /sdcard
