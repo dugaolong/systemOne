@@ -26,8 +26,8 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity {
 
     MyStatusReceiver mMyStatusReceiver;
-    int num,num2;
-    EditText input_num1,input_num2;
+    int num, num2;
+    EditText input_num1, input_num2;
     Context mContext;
     List<ApplicationInfo> mApplicationInfos;
     Set<String> allowPackages;
@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
 
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+//                try {
+//                    uninsall();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
                 if (TextUtils.isEmpty(input_num1.getText().toString())) {
                     Toast.makeText(mContext, "1填数字", Toast.LENGTH_SHORT).show();
                     return;
@@ -61,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
                 num = Integer.valueOf(input_num1.getText().toString());
                 num2 = Integer.valueOf(input_num2.getText().toString());
                 try {
-                    if (allowPackages.contains("com.ly.taotoutiao") && num2 > 0) {
-                        niuniutoutiao();
-                    }
-                    if (allowPackages.contains("com.jifen.qukan") && num > 0) {
+                    if (allowPackages.contains("com.jifen.qukan") && num > 10) {
                         qutoutiao();
+                    }
+                    if (allowPackages.contains("com.ly.taotoutiao") && num2 > 10) {
+                        taotoutiao();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -93,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             Thread.sleep(5000);
             execShellCmd("input tap 180 300");
 //            upDownClick();
-            swipeClick();
+            qutoutiaoSwipeClick();
 //            Log.v("qutoutiao", "第" + i + "次end");
 //            if (i % 10 == 0) {
 //                Toast.makeText(mContext, i+"jifen", Toast.LENGTH_SHORT).show();
@@ -103,24 +108,24 @@ public class MainActivity extends AppCompatActivity {
         execShellCmd("am force-stop com.jifen.qukan");
     }
 
-    // //牛牛头条
-    private void niuniutoutiao() throws Exception {
+    // //taotoutiao
+    private void taotoutiao() throws Exception {
         Thread.sleep(3000);
         execShellCmd("am start -n com.ly.taotoutiao/com.ly.taotoutiao.view.activity.MainActivity");
         Thread.sleep(10000);
         for (int i = 1; i < num2; i++) {
-            execShellCmd("input tap 277 187");
+            execShellCmd("input tap 500 187");
             Thread.sleep(5000);
             execShellCmd("input swipe 555 304 222 1008 1500");
             Thread.sleep(5000);
             execShellCmd("input tap 180 300");
-            swipeClick();
+            taotoutiaoSwipeClick();
         }
         execShellCmd("am force-stop com.ly.taotoutiao");
     }
 
-// execShellCmd("input swipe 222 1000 555 300 900");
-    private void swipeClick() throws Exception {
+    // execShellCmd("input swipe 222 1000 555 300 900");
+    private void qutoutiaoSwipeClick() throws Exception {
         Thread.sleep(5000);
         execShellCmd("input swipe 222 1000 555 300 1500");
         Thread.sleep(4500);
@@ -151,6 +156,29 @@ public class MainActivity extends AppCompatActivity {
         execShellCmd("input keyevent 4");
         Thread.sleep(5000);
     }
+ private void taotoutiaoSwipeClick() throws Exception {
+        Thread.sleep(5000);
+        execShellCmd("input swipe 222 1000 555 300 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1020 555 300 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1000 555 310 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1007 555 300 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1000 555 302 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1000 555 305 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1000 555 304 1500");
+        Thread.sleep(4500);
+        execShellCmd("input swipe 222 1007 555 304 1500");
+        Thread.sleep(4500);
+        execShellCmd("input keyevent 4");
+        Thread.sleep(5000);
+        execShellCmd("input keyevent 4");
+        Thread.sleep(5000);
+    }
 
     /**
      * 执行shell命令
@@ -170,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
             dataOutputStream.flush();
             dataOutputStream.close();
             outputStream.close();
+            Log.v("aaa","okkkkkkk");
         } catch (Exception t) {
             t.printStackTrace();
         }
@@ -221,5 +250,13 @@ public class MainActivity extends AppCompatActivity {
         mApplicationInfos = applicationInfos;
     }
 
+    private void uninsall() throws Exception {
+
+//        Thread.sleep(3000);
+        Log.v("aaa","aaaaaaa");
+        execShellCmd("uninstall com.miui.video ");
+//        Thread.sleep(10000);
+
+    }
 
 }
