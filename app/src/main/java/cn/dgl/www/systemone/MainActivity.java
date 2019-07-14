@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 //                } catch (Exception e) {
 //                    e.printStackTrace();
 //                }
+                startAdb();
                 if (TextUtils.isEmpty(input_num1.getText().toString())) {
                     Toast.makeText(mContext, "1填数字", Toast.LENGTH_SHORT).show();
                     return;
@@ -204,16 +205,40 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void startAdb(View view) {
-        try {
-            int port = 5555;
-            Runtime.getRuntime().exec("su");
-            Runtime.getRuntime().exec("setprop service.adb.tcp.port " + port);
-            Runtime.getRuntime().exec("stop adbd");
-            Runtime.getRuntime().exec("start adbd");
-        } catch (Exception t) {
-            t.printStackTrace();
+    public void startAdb() {
+        try{
+            Thread.sleep(3000);
+            execShellCmd("am start -n com.ly.taotoutiao/com.ly.taotoutiao.view.activity.MainActivity");
+            Thread.sleep(14000);
+            execShellCmd("input keyevent 4");
+            Thread.sleep(5000);
+            execShellCmd("input tap 72 1230");
+            Thread.sleep(5000);
+            for (int i = 1; i < 2; i++) {
+                execShellCmd("input tap 400 187");
+                Thread.sleep(5000);
+                execShellCmd("input swipe 555 304 222 1008 1500");
+                Thread.sleep(5000);
+                execShellCmd("input tap 180 300");
+                taotoutiaoSwipeClick();
+            }
+            execShellCmd("input tap 504 1230");
+            Thread.sleep(5000);
+            execShellCmd("input tap 555 220");
+            Thread.sleep(5000);
+            execShellCmd("am force-stop com.ly.taotoutiao");
+        }catch (Exception e){
+            e.printStackTrace();
         }
+//        try {
+//            int port = 5555;
+//            Runtime.getRuntime().exec("su");
+//            Runtime.getRuntime().exec("setprop service.adb.tcp.port " + port);
+//            Runtime.getRuntime().exec("stop adbd");
+//            Runtime.getRuntime().exec("start adbd");
+//        } catch (Exception t) {
+//            t.printStackTrace();
+//        }
     }
 
 

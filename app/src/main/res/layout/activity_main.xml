@@ -52,9 +52,9 @@
         android:layout_height="100dp"
         android:text="" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="startAdb"
-        android:text="开启adb功能" />
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="startAdb"-->
+        <!--android:text="开启adb功能" />-->
 </LinearLayout>
