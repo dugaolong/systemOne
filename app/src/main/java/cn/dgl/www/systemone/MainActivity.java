@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
 //                } catch (Exception e) {
 //                    e.printStackTrace();
 //                }
-                startAdb();
+                signqutoutiao();
+                signtaotoutiao();
                 if (TextUtils.isEmpty(input_num1.getText().toString())) {
                     Toast.makeText(mContext, "1填数字", Toast.LENGTH_SHORT).show();
                     return;
@@ -205,7 +206,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void startAdb() {
+    public void signqutoutiao() {
+        try{
+            //趣头条
+            Thread.sleep(3000);
+            execShellCmd("am start -n com.jifen.qukan/com.jifen.qkbase.main.MainActivity");
+            Thread.sleep(14000);
+            execShellCmd("input keyevent 4");
+            Thread.sleep(5000);
+            execShellCmd("input tap 504 1230");
+            Thread.sleep(10000);
+            execShellCmd("am force-stop com.jifen.qukan");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void signtaotoutiao() {
         try{
             Thread.sleep(3000);
             execShellCmd("am start -n com.ly.taotoutiao/com.ly.taotoutiao.view.activity.MainActivity");
@@ -230,15 +247,6 @@ public class MainActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
-//        try {
-//            int port = 5555;
-//            Runtime.getRuntime().exec("su");
-//            Runtime.getRuntime().exec("setprop service.adb.tcp.port " + port);
-//            Runtime.getRuntime().exec("stop adbd");
-//            Runtime.getRuntime().exec("start adbd");
-//        } catch (Exception t) {
-//            t.printStackTrace();
-//        }
     }
 
 
