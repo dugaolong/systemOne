@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     if (allowPackages.contains("com.jifen.qukan") && num > 10) {
                         qutoutiao();
                     }
-                    if (allowPackages.contains("com.ly.taotoutiao") && num2 > 10) {
+                    if (allowPackages.contains("com.kuaima.kuailai") && num2 > 10) {
                         taotoutiao();
                     }
                 } catch (Exception e) {
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     // //taotoutiao
     private void taotoutiao() throws Exception {
         Thread.sleep(3000);
-        execShellCmd("am start -n com.ly.taotoutiao/com.ly.taotoutiao.view.activity.MainActivity");
+        execShellCmd("am start -n com.kuaima.kuailai/com.kuaima.kuailai.MainInterfaceActivity");
         Thread.sleep(10000);
         for (int i = 1; i < num2; i++) {
             execShellCmd("input tap 500 187");
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             execShellCmd("input tap 180 300");
             taotoutiaoSwipeClick();
         }
-        execShellCmd("am force-stop com.ly.taotoutiao");
+        execShellCmd("am force-stop com.kuaima.kuailai");
     }
 
     // execShellCmd("input swipe 222 1000 555 300 900");
@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
     public void signtaotoutiao() {
         try{
             Thread.sleep(3000);
-            execShellCmd("am start -n com.ly.taotoutiao/com.ly.taotoutiao.view.activity.MainActivity");
+            execShellCmd("am start -n com.kuaima.kuailai/com.kuaima.kuailai.MainInterfaceActivity");
             Thread.sleep(14000);
             execShellCmd("input keyevent 4");
             Thread.sleep(5000);
@@ -239,11 +239,11 @@ public class MainActivity extends AppCompatActivity {
                 execShellCmd("input tap 180 300");
                 taotoutiaoSwipeClick();
             }
-            execShellCmd("input tap 504 1230");
+            execShellCmd("input tap 360 1230");
             Thread.sleep(5000);
-            execShellCmd("input tap 555 220");
+//            execShellCmd("input tap 555 220");
             Thread.sleep(5000);
-            execShellCmd("am force-stop com.ly.taotoutiao");
+            execShellCmd("am force-stop com.kuaima.kuailai");
         }catch (Exception e){
             e.printStackTrace();
         }
